@@ -1,0 +1,116 @@
+:root {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --accent: #3b82f6;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --accent: #2563eb;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  text-align: center;
+}
+
+header {
+  padding: 40px 20px;
+  background: var(--bg);
+  position: relative;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+h1, h2, p, li {
+  color: var(--text);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+ul, ol {
+  text-align: left;
+  max-width: 800px;
+  margin: auto;
+}
+
+li {
+  margin: 12px 0;
+  font-size: 1.1em;
+}
+
+footer {
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.9em;
+  position: relative;
+}
+
+#back-to-top {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1.5em;
+  display: none;
+  color: var(--accent);
+}
+
+#back-to-top.visible {
+  display: block;
+  cursor: pointer;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.screenshot {
+  max-width: 90%;
+  margin: 10px auto;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+}
+
+#dark-toggle {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: var(--text);
+  cursor: pointer;
+}

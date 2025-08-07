@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JVMBox - Máquina Virtual Linux en Java</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo JVMBox" class="logo" />
+    <h1>JVMBox</h1>
+    <p>Una máquina virtual Linux ejecutada con Java y QEMU portable.</p>
+    <a href="#descargar" class="btn">Descargar</a>
+    <button id="dark-toggle" title="Modo claro/oscuro">🌗</button>
+  </header>
+
+  <main>
+    <!-- Características -->
+    <section id="features" class="fade-in">
+      <h2>Características</h2>
+      <ul>
+        <li>⚙️ 100% portable, sin instalación</li>
+        <li>🖥️ Interfaz gráfica en Java con splash screen</li>
+        <li>💾 Soporte de ISOs y disco virtual `.qcow2`</li>
+        <li>🎧 Audio, video, arranque desde CD o disco</li>
+        <li>📦 Compatible con Debian, Ubuntu, TinyCore</li>
+      </ul>
+    </section>
+
+    <!-- Instalación -->
+    <section id="instalacion" class="fade-in">
+      <h2>Cómo instalar JVMBox</h2>
+      <ol>
+        <li>Descarga el archivo <b>JVMBox.zip</b></li>
+        <li>Extrae la carpeta completa</li>
+        <li>Asegúrate de tener <b>Java 8+</b> instalado (puedes usar versión portable)</li>
+        <li>Haz doble clic en <b>JVMBox.jar</b> o ejecuta: <code>java -jar JVMBox.jar</code></li>
+        <li>Selecciona un ISO si deseas instalar un sistema</li>
+        <li>¡Listo! Tu Linux se ejecutará en una VM dentro de tu PC</li>
+      </ol>
+    </section>
+
+    <!-- Descarga -->
+    <section id="descargar" class="fade-in">
+      <h2>Descargar JVMBox</h2>
+      <p>Incluye GUI, QEMU portable, disco virtual, y soporte para ISO.</p>
+      <a href="https://tuservidor.com/JVMBox.zip" class="btn">Descargar ahora</a>
+    </section>
+
+    <!-- Capturas -->
+    <section id="capturas" class="fade-in">
+      <h2>Capturas</h2>
+      <img src="img/captura1.png" alt="GUI de JVMBox" class="screenshot" />
+      <img src="img/captura2.png" alt="Sistema Linux corriendo" class="screenshot" />
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="fade-in">
+      <h2>Preguntas frecuentes</h2>
+      <ul>
+        <li><b>¿Necesito instalar Java?</b><br>Sí, al menos Java 8. Puedes usar una versión portable.</li>
+        <li><b>¿Funciona sin permisos de administrador?</b><br>Sí, JVMBox y QEMU funcionan 100% sin instalar nada.</li>
+        <li><b>¿Qué sistemas puedo ejecutar?</b><br>TinyCore, Debian, Ubuntu y otros compatibles con x86_64.</li>
+        <li><b>¿Se guarda el progreso?</b><br>Sí, usando el disco `hdd.qcow2`, puedes guardar tus datos.</li>
+      </ul>
+    </section>
+
+    <!-- Contribuir -->
+    <section id="contribuir" class="fade-in">
+      <h2>Contribuir al proyecto</h2>
+      <p>JVMBox es un proyecto libre. Puedes:</p>
+      <ul>
+        <li>💻 Ver el código en <a href="https://github.com/Daymiro04/JVMBox" target="_blank">GitHub</a></li>
+        <li>🐛 Reportar bugs o sugerencias</li>
+        <li>🌟 Compartir con otros</li>
+      </ul>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="fade-in">
+      <h2>Contacto</h2>
+      <p>¿Tienes dudas o quieres colaborar?</p>
+      <ul>
+        <li>✉️ Email: jvmbox@tucorreo.com</li>
+        <li>💬 Discord: <a href="https://discord.gg/tuinvitacion" target="_blank">Servidor JVMBox</a></li>
+        <li>🐙 GitHub: <a href="https://github.com/Daymiro04/" target="_blank">@tuusuario</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 JVMBox. Proyecto desarrollado con Java + QEMU.</p>
+    <a href="#" id="back-to-top" title="Volver arriba">⬆</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+name: portable-release-actions-workflow
+on:
+  push:
+    tags:
+      - 'qemu' # Solo se ejecuta cuando publiques un tag llamado "qemu"
+
+permissions:
+  contents: write    
+
+jobs:
+  build:
+    name: Create Portable QEMU Release (Latest)
+    runs-on: windows-latest
+    env:
+      targetZip: qemu-w64-portable-latest.zip
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar última versión estable de QEMU
+        shell: pwsh
+        run: |
+          $url = (Invoke-WebRequest -Uri "https://qemu.weilnetz.de/w64/").Links |
+                 Where-Object { $_.href -match "qemu-w64-setup-.*\.exe" } |
+                 Sort-Object href -Descending |
+                 Select-Object -First 1 |
+                 ForEach-Object { "https://qemu.weilnetz.de/w64/$($_.href)" }
+
+          Write-Host "Última versión encontrada: $url"
+          Invoke-WebRequest -Uri $url -OutFile qemu-installer.exe
+
+      - name: Extraer QEMU del instalador
+        shell: cmd
+        run: |
+          mkdir installation
+          qemu-installer.exe /S /D=%CD%\installation
+          cd installation
+          del qemu-uninstall.exe
+
+      - name: Crear archivo ZIP portable
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          directory: "installation"
+          filename: "${{ env.targetZip }}"
+
+      - name: Mover ZIP a la raíz
+        shell: pwsh
+        run: |
+          Move-Item "installation/${{ env.targetZip }}" "${{ env.targetZip }}"
+
+      - name: Subir release portable
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "${{ env.targetZip }}"
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
